@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(-45deg, #a1c4fd, #c2e9fb, #b2ebf2, #81d4fa);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+    color: #034f84;
+    overflow-x: hidden;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header { text-align: center; padding: 3rem 1rem 1rem; }
+header h1 { font-size: 2.8rem; margin: 0; }
+header p { opacity: 0.8; }
+
+.masonry {
+    column-count: 3;
+    column-gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    width: 100%;
+    box-shadow: 0 8px 25px rgba(3, 79, 132, 0.15);
+    transition: all 0.4s ease;
+    animation: fadeIn 0.8s ease forwards;
+    opacity: 0;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(3, 79, 132, 0.3);
+}
+
+.card img { width: 100%; display: block; }
+.card-content { padding: 1rem; }
+.card h3 { margin: 0 0 0.5rem; }
+.card p { font-size: 0.9rem; opacity: 0.8; }
+
+@keyframes fadeIn { to { opacity: 1; } }
+
+@media (max-width: 900px) { .masonry { column-count: 2; } }
+@media (max-width: 600px) { .masonry { column-count: 1; } }
+
+.sparkle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.9;
+    box-shadow: 0 0 8px white, 0 0 12px #81d4fa;
+    animation: floatUp 2s linear forwards;
+    z-index: 9999;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-150px) scale(0.5); opacity: 0; }
+}
+
+footer { text-align: center; padding: 2rem; opacity: 0.6; }
